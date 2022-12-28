@@ -10,28 +10,32 @@ public class EmployeeWage {
 		int Part_time_hr = 4;
 		int workingDaysPerMonth = 20;
 		double monthlyWage = 0;
-		for(int day = 0; day < workingDaysPerMonth; day++) {
-            int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-            switch (empCheck) {
-                case 1:
-                    System.out.println("Employee is Present");
-                    Working_Hr= 8;
-                    break;
-                case 2:
-                    System.out.println("Employee is Part-Time Present");
-                    Working_Hr = 4;
-                    break;
-                default:
-                    System.out.println("Employee is Absent");
-                    Working_Hr= 0;
+	    int maxi_Hrs_In_Month = 100;
+	    int total_Employee_Hrs = 0;
+	    int total_Working_Days = 0;
+	    while (total_Employee_Hrs <= maxi_Hrs_In_Month &&
+	    		total_Working_Days < workingDaysPerMonth) {
+	    	total_Working_Days++; {
+                int empCheck = (int) Math.floor(Math.random() * 10) % 3;
+                switch (empCheck) {
+                    case 1:
+                        System.out.println("Employee is Present");
+                        Working_Hr = 8;
+                        break;
+                    case 2:
+                        System.out.println("Employee is Part-Time Present");
+                        Working_Hr = 4;
+                        break;
+                    default:
+                        System.out.println("Employee is Absent");
+                        Working_Hr = 0;
+                }
+                total_Employee_Hrs = Working_Hr + total_Employee_Hrs;
+                System.out.println("Day:" + total_Working_Days + " EmpHour: " + Working_Hr);
             }
-            dailyWage = Working_Hr * Wage_Per_Hr;
-            monthlyWage = dailyWage + monthlyWage;
-            System.out.println("Daily wage of employee is "+ dailyWage);
+            int totalEmployeeWage = total_Employee_Hrs * Wage_Per_Hr;
+            System.out.println("Total Employee Wage " + totalEmployeeWage);
         }
-		
-		System.out.println("-------------------");
-        System.out.println("Monthly employee wage is "+ monthlyWage);
-	}
 
+	}
 }
