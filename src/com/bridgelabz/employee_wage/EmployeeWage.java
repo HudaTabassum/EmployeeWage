@@ -16,7 +16,7 @@ public class EmployeeWage {
 			dailyWage = Wage_Per_Hr * Working_Hr;     
 			System.out.println(dailyWage);  
 		}
-		
+	
 		else if (empCheck == 2)
 		{
 			System.out.println("Employee's part time");
@@ -24,7 +24,6 @@ public class EmployeeWage {
 			System.out.println(dailyWage);  
 
 		}
-		
 		else {
 			System.out.println("Employee is absent");   
 		}
